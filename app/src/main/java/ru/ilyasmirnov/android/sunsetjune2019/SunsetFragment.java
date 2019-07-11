@@ -24,9 +24,9 @@ public class SunsetFragment extends Fragment {
 
     private View mReflectionSunView;
 
-    private int mBlueSkyColor; //   -14779705
-    private int mSunsetSkyColor; // -1277696
-    private int mNightSkyColor; //  -16443090
+    private int mBlueSkyColor;
+    private int mSunsetSkyColor;
+    private int mNightSkyColor;
 
     private float mSunYStart;
     private float mSunYEnd;
@@ -92,8 +92,6 @@ public class SunsetFragment extends Fragment {
 
                 } else if (mAnimatorSet.isRunning()) {
 
-                    mAnimatorSet.pause();
-
                     if (mNightSkyAnimator.isRunning()) {
 
                         startReverseAnimation(getBackgroundColor(mSkyView), true, mSunView.getY());
@@ -110,8 +108,6 @@ public class SunsetFragment extends Fragment {
                     startReverseAnimation(mNightSkyColor, true, mSunView.getY());
 
                 } else if (mReverseAnimatorSet.isRunning()) {
-
-                    mReverseAnimatorSet.pause();
 
                     if (mHeightAnimator.isRunning()) {
 
